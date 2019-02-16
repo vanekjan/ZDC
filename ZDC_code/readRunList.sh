@@ -12,7 +12,7 @@ makeUnseenList.sh $runYear
 
 for run in $( cat  $runList ); do
   echo '*************run '$run'*************'
-  ls data/$runDirectory/$run/* > data/$runDirectory.list
+  ls /gpfs01/star/pwg/lkramarik/ZDC/ZDC_code/data/$runDirectory/$run/* > /gpfs01/star/pwg/lkramarik/ZDC/ZDC_code/data/$runDirectory.list
 
   # if [ ! -f read.pid ]; then
   #   rm -f read.out

@@ -171,7 +171,7 @@
     // prepost = 0 by default, which means reading out the triggered bunch crossing
     // prepost = 1 will generate plots for -1, 0, and +1
     // prepost = 2 will generate plots for -2, -1, 0, +1, and +2, and so on
-    prepost = 5;
+    prepost = 0;
 
     // Which runs to accumulate per fill
     //namesToAddFill = "zdc_pol";
