@@ -1,0 +1,7 @@
+#!/bin/csh
+
+starver dev
+root4star -b -q ./read.C'("config.C")'
+#root4star ./read.C'("config_interactive.C")'
+
+#root4star -b -q ./TDFReader.C'("./data/run13010031.1.dat",1000)'

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+root4star -b -q  StRoot/StZDCUtil/macros/test_db/test_db.C

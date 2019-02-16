@@ -1,0 +1,23 @@
+#!/bin/sh
+
+export SRC_DIR=${0%/*}
+export DST_DIR=`pwd`
+
+echo "Configuring from $SRC_DIR to $DST_DIR"
+
+/bin/ln -sf $SRC_DIR/read $DST_DIR/
+/bin/ln -sf $SRC_DIR/stop $DST_DIR/
+/bin/ln -sf $SRC_DIR/wakeup $DST_DIR/
+/bin/ln -sf $SRC_DIR/reload_config $DST_DIR/
+/bin/ln -sf $SRC_DIR/read.C $DST_DIR/
+/bin/ln -sf $SRC_DIR/config.C $DST_DIR/
+/bin/ln -sf $SRC_DIR/config_interactive.C $DST_DIR/
+/bin/ln -sf $SRC_DIR/style.C $DST_DIR/
+/bin/ln -sf $SRC_DIR/log4j.xml $DST_DIR/
+/bin/cp -f $SRC_DIR/status.txt $DST_DIR/
+/bin/cp -f $SRC_DIR/zdcPedCal.txt $DST_DIR/
+
+/bin/chmod a+x $DST_DIR/read
+/bin/chmod a+x $DST_DIR/stop
+/bin/chmod a+x $DST_DIR/wakeup
+/bin/chmod a+x $DST_DIR/reload_config

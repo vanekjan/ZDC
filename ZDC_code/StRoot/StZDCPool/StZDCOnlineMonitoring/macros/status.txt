@@ -1,0 +1,4 @@
+STOP
+
+The first word in this file can be RUN or anything else.
+RUN enables continuous monitoring.

@@ -1,0 +1,13 @@
+/*	zdcCalib.idl
+ *
+ *	Table: zdcCalib
+ *
+ *	description: *	//:	Pedestals and calibration constants for ZDC towers
+ */
+
+struct zdcCalib {
+	long RunID;                  /*  runID */
+	float ZdcPedestal[8];         /* pedestals [e,w][sum,tower1,tower2,tower3] */
+	float ZdcCalib[8];       /* absolute calibration, energy = ADC * calib */
+};
+

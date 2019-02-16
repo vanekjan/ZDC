@@ -1,0 +1,13 @@
+/*	zdcsmdGain.idl
+ *
+ *	Table: zdcsmdGain
+ *
+ *	description: *	//:	Table which contains gain information for zdcsmd ADCs
+ */
+
+struct zdcsmdGain {
+	long RunID;                  /*  runID */
+	float ZdcsmdGain[32];    /* relative gain of zdcsmd strips [e,w][v,h][0...7] */
+	float ZdcsmdCalib[4];    /* absolute calibration {ev, eh, wv, wh}, energy = (ADC / gain) * calib */
+};
+

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [[ -f ./read.pid ]]
+then
+kill -USR2 `cat ./read.pid`
+else
+echo "The job is not running"
+fi

@@ -1,0 +1,29 @@
+StZDCUtil package
+
+-----------------------------------------------
+1. StZDCDb
+
+The database interface.
+Provides access to the following DB tables:
+zdcsmdPed
+zdcsmdGain
+zdcsmdBeamCenter
+zdcCalib
+This class can read and write text files, 
+access DB via St_db_Maker or directly via StDbManager.
+
+macros/test_db
+Automatic testing macro "test_db". 
+Run it without arguments and look for "All tests PASSED" in the output.
+
+-----------------------------------------------
+2. StZDCGeom
+
+The description of ZDC geometry in the STAR coordinate system.
+
+-----------------------------------------------
+3. StZDCUtil
+
+Miscellaneous utility functions.
+
+-----------------------------------------------

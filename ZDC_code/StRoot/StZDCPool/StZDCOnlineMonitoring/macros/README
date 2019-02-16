@@ -1,0 +1,42 @@
+//-----------------------------------------------------------------
+//
+// ZDC Online Monitoring
+//
+// To begin from scratch in a fresh directory:
+// 1. Copy over StRoot/StZDCUtil and StRoot/StZDCPool
+// 2. cons
+// 3. ./StRoot/StZDCPool/StZDCOnlineMonitoring/macros/configure
+//
+// To start the job:
+// > ./read &
+//
+// If you make changes in the configuration file, 
+// send a signal to the running instance to reload it:
+// > kill -USR1 `cat ./read.pid`
+// or
+// > reload_config
+//
+// To stop the current sleep cycle and look for the 
+// new data immediately:
+// > kill -USR2 `cat ./read.pid`
+// or
+// > wakeup
+//
+// To stop the running job:
+// > kill `cat ./read.pid`
+// or
+// > echo STOP >| ./status.txt
+// or
+// > stop
+// It will exit after finishing the current cycle, if any
+//
+// If it still does not exit, kill it:
+// > kill -9 `cat ./read.pid`
+// Then delete ./read.pid, otherwise next time it will
+// complain that another instance is running
+//
+// Oleksandr Grebenyuk
+// ogrebenyuk@lbl.gov
+// Feb 2009
+//
+//-----------------------------------------------------------------
