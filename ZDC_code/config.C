@@ -43,7 +43,7 @@
 
 // THIS NEEDS TO BE CHANGED EVERY RUN
 	dirOut = "/gpfs01/star/pwg/lkramarik/ZDC/ZDC_Calibration/run18.ZdcCalibration.lkramarik";
-	seenRuns = "/gpfs01/star/pwg/lkramarik/ZDC/ZDC_Code/seenRuns/seenRuns_run18.lkramarik.txt";// move to the beginning by Yifei Xu
+	seenRuns = "/gpfs01/star/pwg/lkramarik/ZDC/ZDC_code/seenRuns/seenRuns_run18.lkramarik.txt";// move to the beginning by Yifei Xu
 // 	dirOut = "/gpfs01/star/pwg/lkramarik/ZDC/ZDC_Calibration/run19.ZdcCalibration.lkramarik";
 //	seenRuns = "/gpfs01/star/pwg/lkramarik/ZDC/seenRuns/seenRuns_run19.lkramarik.txt";// move to the beginning by Yifei Xu
 
