@@ -420,7 +420,7 @@ void ZDCPlots::processEvent(const StTriggerData *td, int date, int time, int pre
 		int west = 1;
 
 
-		for (int prepostSet = 0; prepostSet < 6; ++prepostSet) {
+		for (int prepostSet = 0; prepostSet < prepost+1; ++prepostSet) { //prepost analysis
 			prepost_event = prepostSet;
 			zdc_ADC_EastSum_Attenuated = td->zdcAttenuated((StBeamDirection) east, prepostSet);
 			zdc_ADC_EastSum = td->zdcUnAttenuated((StBeamDirection) east, prepostSet);
