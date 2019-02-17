@@ -6,7 +6,9 @@ runYear="run18"
 tofCut=100
 
 # untar all the tarred .dat files
-data/untarAll.sh data/$runDirectory
+pushd data/ >> /dev/null
+./untarAll.sh $runDirectory
+popd >> /dev/null
 
 makeUnseenList.sh $runYear
 
