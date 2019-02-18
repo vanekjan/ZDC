@@ -2,8 +2,8 @@
 
 runList=${1:-"unSeenRuns.list"}
 runDirectory="run19.ZdcCalibration.lkramarik"
-runYear="run18"
-tofCut=100
+runYear="run19"
+tofCut=0
 
 # untar all the tarred .dat files
 pushd data/ >> /dev/null
