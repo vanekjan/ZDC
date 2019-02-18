@@ -31,8 +31,8 @@ using namespace std;
 #include <St_db_Maker/St_db_Maker.h>
 
 #include <StTriggerData.h>
-#include <StTriggerData2018.h>
-//#include <StTriggerData2019.h>
+//#include <StTriggerData2018.h>
+#include <StTriggerData2019.h>
 
 #include <tables/St_zdcsmdPed_Table.h>
 #include <tables/St_zdcsmdGain_Table.h>

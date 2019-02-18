@@ -8,8 +8,8 @@ void html_maker(int RunNumber = 0)
 //	char trgSetup[20] = {"pp500production"};
 	char typeEnergy[10]={"lkramarik"};
 
-	TString Trgsetup = "production_isobar_2018";
-	TString BeamTypeEnergy = "X+X@200GeV";
+	TString Trgsetup = "production_2019";
+	TString BeamTypeEnergy = "Au+Au";
 //*********************************************************
 	if(RunNumber < 1e7 || RunNumber >= 1e8) // has to be an 8-digit number
 	{
@@ -62,9 +62,9 @@ void html_maker(int RunNumber = 0)
 	if(!ofile) {cerr<<"ofile.open failed"<<endl;return 0;}
 
 	ofile<<"<!DOCTYPE HTML>"<<endl;
-	ofile<<"<!-- This webpage is craeted by Miroslav Simko -->"<<endl;
+	ofile<<"<!-- This webpage is craeted by Lukas Kramarik -->"<<endl;
 	ofile<<"<html>"<<endl;
-	ofile<<"<!-- Head msimko --><!-- **************************************** -->"<<endl;
+	ofile<<"<!-- Head lkramarik --><!-- **************************************** -->"<<endl;
 	ofile<<"<head>"<<endl;
 	ofile<<"<title>Run"<<RunNumber<<" ZDC</title>"<<endl;
 	ofile<<"<style type=\"text/css\">"<<endl;
@@ -88,7 +88,7 @@ void html_maker(int RunNumber = 0)
 	ofile<<""<<endl;
 	ofile<<"</style>"<<endl;
 	ofile<<"</head>"<<endl;
-	ofile<<"<!-- Body msimko --><!-- **************************************** -->"<<endl;
+	ofile<<"<!-- Body lkramarik --><!-- **************************************** -->"<<endl;
 	ofile<<"<body>"<<endl;
 	ofile<<"<h1><p>Run "<<RunNumber<<" Analysis</p></h1>"<<endl;
 	ofile<<"<h2><p>Trgsetup : "<<Trgsetup<<"</p></h2>"<<endl;
@@ -215,6 +215,6 @@ void html_maker(int RunNumber = 0)
 	ofile<<" <A href=\"./analysis/"<<RunNumber<<"/"<<RunNumber<<"_west_sum_diff.gif\">"<<endl;
 	ofile<<"<img src=\"./analysis/"<<RunNumber<<"/"<<RunNumber<<"_west_sum_diff.gif\" alt=\""<<RunNumber<<"_west_sum_diff.gif\" width=\"480\" height \"360\"/></A>"<<endl;
 	ofile<<"</body>"<<endl;
-	ofile<<"<!-- End msimko --><!-- **************************************** -->"<<endl;
+	ofile<<"<!-- End lkramarik --><!-- **************************************** -->"<<endl;
 	ofile<<"</html>"<<endl;
 }

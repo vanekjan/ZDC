@@ -42,10 +42,10 @@
 //	dirOut = "/star/u/yhzhu/bnl/final_AuAu200GeV/testrun"; 
 
 // THIS NEEDS TO BE CHANGED EVERY RUN
-	dirOut = "/gpfs01/star/pwg/lkramarik/ZDC/ZDC_Calibration/run18.ZdcCalibration.lkramarik";
-	seenRuns = "/gpfs01/star/pwg/lkramarik/ZDC/ZDC_code/seenRuns/seenRuns_run18.lkramarik.txt";// move to the beginning by Yifei Xu
-// 	dirOut = "/gpfs01/star/pwg/lkramarik/ZDC/ZDC_Calibration/run19.ZdcCalibration.lkramarik";
-//	seenRuns = "/gpfs01/star/pwg/lkramarik/ZDC/seenRuns/seenRuns_run19.lkramarik.txt";// move to the beginning by Yifei Xu
+//	dirOut = "/gpfs01/star/pwg/lkramarik/ZDC/ZDC_Calibration/run18.ZdcCalibration.lkramarik";
+//	seenRuns = "/gpfs01/star/pwg/lkramarik/ZDC/ZDC_code/seenRuns/seenRuns_run18.lkramarik.txt";
+ 	dirOut = "/gpfs01/star/pwg/lkramarik/ZDC/ZDC_Calibration/run19.ZdcCalibration.lkramarik";
+	seenRuns = "/gpfs01/star/pwg/lkramarik/ZDC/ZDC_code/seenRuns/seenRuns_run19.lkramarik.txt";
 
 //	... and assume it is visible at this URL
 //	publicDir = "http://www.star.bnl.gov/protected/spin/ogrebeny/zdc2009";
@@ -88,8 +88,8 @@
 //		filename = "./run10065061.list";
 
 // THIS NEEDS TO BE CHANGED EVERY RUN
-		filename = "/gpfs01/star/pwg/lkramarik/ZDC/ZDC_code/data/run18.ZdcCalibration.lkramarik.list";
-//		filename = "/gpfs01/star/pwg/lkramarik/ZDC/ZDC_code/data/run19.ZdcCalibration.lkramarik.list";
+//		filename = "/gpfs01/star/pwg/lkramarik/ZDC/ZDC_code/data/run18.ZdcCalibration.lkramarik.list";
+		filename = "/gpfs01/star/pwg/lkramarik/ZDC/ZDC_code/data/run19.ZdcCalibration.lkramarik.list";
 
 		searchForOtherRunFiles = false;
 	}

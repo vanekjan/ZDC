@@ -1,7 +1,7 @@
 #!/bin/bash
 
 runList=${1:-"unSeenRuns.list"}
-runDirectory="run18.ZdcCalibration.lkramarik"
+runDirectory="run19.ZdcCalibration.lkramarik"
 runYear="run18"
 tofCut=100
 
