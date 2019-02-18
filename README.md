@@ -46,7 +46,7 @@ filename = "/gpfs01/star/pwg/lkramarik/ZDC/ZDC_code/data/run19.ZdcCalibration.lk
 ```sh
 #include "StDaqLib/TRG/trgStructures2019.h" 
 #include "StEvent/StTriggerData2019.h"
-if(td[3] == 0x46){//modified by msimko for run2019	
+if(td[3] == 0x46){
 TriggerDataBlk2019* trgdata2019 = (TriggerDataBlk2019*)td; 
 StTriggerData2019* trgd = new StTriggerData2019(trgdata2019,run); 
 ```
