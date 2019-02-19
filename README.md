@@ -10,18 +10,17 @@ Data files are there in the folder:
 ```sh
 /home/starsink/raw/daq/#YYYY/#DAY/#RUN
 ```
-Enter number of the run, that you are going analyse to script `ZDC_code/data/transferTarFiles.cpp` as variable 	`int RunNumber` and run this script to download the run***.tgz file:
-```sh
-root -l -q transferTarFiles.cpp
-```
+Enter number of the run, that you are going analyse to script `ZDC_code/data/transferTarFiles.cpp` as variable `int RunNumber` and run `transferTarFiles.sh` script to download the run***.tgz file:
+
 Download progress could be checked at https://www.star.bnl.gov/devcgi/display_accnt.cgi.
 Once the file is download, the only think you need to do is run:
 ```sh
 ./readRunList.sh 
 ```
+Before running this script, update all files and create appropriate folders. For details see the section below.
 
 ## Changes needed at the beginning of the new year run
-New files and folders or you cam just run `prepareFolders.sh`:
+New files and folders or you can just run `prepareFolders.sh`:
 ```sh
 touch ZDC_code/seenRuns/seenRuns_run19.vanekjan.txt
 mkdir ZDC_code/data/run19.ZdcCalibration.vanekjan

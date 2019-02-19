@@ -1,3 +1,3 @@
 #!/bin/csh
 
-ls /gpfs/mnt/gpfs01/star/pwg/lkramarik/ZDC/ZDC_code/data/run19.ZdcCalibration.lkramarik/20048001/*.dat > run19.ZdcCalibration.lkramarik.list
+ls /star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_code/data/run19.ZdcCalibration.vanekjan/20048001/*.dat > run19.ZdcCalibration.vanekjan.list
