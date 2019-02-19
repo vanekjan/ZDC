@@ -25,11 +25,11 @@ void zdcTree::Loop()
   //	char trgSetup[50] = {"production_15GeV_2014"};
   //	char trgSetup[20] = {"pedestal_rhicclock"};
   char trgSetup[50] = {"ZdcCalibration"};
-  char typeEnergy[50]={"lkramarik"};
+  char typeEnergy[50]={"vanekjan"};
   //*******************************************************
   int RunYear=int(RunNumber/1000000)-1;
   //*******************************************************
-  char root_file_path[200]={"/gpfs01/star/pwg/lkramarik/ZDC/ZDC_Calibration"};
+  char root_file_path[200]={"/star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_Calibration"};
 
   char work_dir[200];
   sprintf(work_dir,"%s/run%d.%s.%s",root_file_path,RunYear,trgSetup,typeEnergy);
