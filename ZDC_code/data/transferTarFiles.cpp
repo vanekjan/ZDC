@@ -11,7 +11,7 @@ int transferTarFiles()
 
 	int RunNumber	= 20048001;
 // ***********************************************************************
-	TString Energy  = "lkramarik";
+	TString Energy  = "vanekjan";
 	TString trgSetup= "ZdcCalibration";
 
 //	TString Energy	= "pp500";
@@ -22,7 +22,7 @@ int transferTarFiles()
 //	TString trgSetup= "pedAsPhys";
 //	TString trgSetup= "ZdcPolarimetry";
 
-	TString WorkDir = "/gpfs/mnt/gpfs01/star/pwg/lkramarik/ZDC/ZDC_code/data";
+	TString WorkDir = "/star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_code/data";
 	TString OutputFileName = Form("%s/file.list",WorkDir.Data());
 // ***********************************************************************
 	cout<<"================================================"<<endl;

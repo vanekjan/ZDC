@@ -21,20 +21,20 @@ Once the file is download, the only think you need to do is run:
 ```
 
 ## Changes needed at the beginning of the new year run
-New files and folders:
+New files and folders or you cam just run `prepareFolders.sh`:
 ```sh
-touch ZDC_code/seenRuns/seenRuns_run19.lkramarik.txt
-mkdir ZDC_code/data/run19.ZdcCalibration.lkramarik
-mkdir ZDC_Calibration/run19.ZdcCalibration.lkramarik
-mkdir /afs/rhic.bnl.gov/star/users/lkramarik/WWW/run19.ZdcCalibration
+touch ZDC_code/seenRuns/seenRuns_run19.vanekjan.txt
+mkdir ZDC_code/data/run19.ZdcCalibration.vanekjan
+mkdir ZDC_Calibration/run19.ZdcCalibration.vanekjan
+mkdir /afs/rhic.bnl.gov/star/users/vanekjan/WWW/run19.ZdcCalibration
 ```
 Here is the list of files and lines in them, that need to be modified:
 
 `ZDC_code/config.C`:
 ```sh
-dirOut = "/gpfs01/star/pwg/lkramarik/ZDC/ZDC_Calibration/run19.ZdcCalibration.lkramarik";
-seenRuns = "/gpfs01/star/pwg/lkramarik/ZDC/ZDC_code/seenRuns/seenRuns_run19.lkramarik.txt";
-filename = "/gpfs01/star/pwg/lkramarik/ZDC/ZDC_code/data/run19.ZdcCalibration.lkramarik.list";
+dirOut = "/gpfs01/star/pwg/vanekjan/ZDC/ZDC_Calibration/run19.ZdcCalibration.vanekjan";
+seenRuns = "/gpfs01/star/pwg/vanekjan/ZDC/ZDC_code/seenRuns/seenRuns_run19.vanekjan.txt";
+filename = "/gpfs01/star/pwg/vanekjan/ZDC/ZDC_code/data/run19.ZdcCalibration.vanekjan.list";
 ```
 
 `ZDC_code/StRoot/StZDCPool/StZDCOnlineMonitoring/StReadTrg.cxx`
@@ -46,6 +46,7 @@ filename = "/gpfs01/star/pwg/lkramarik/ZDC/ZDC_code/data/run19.ZdcCalibration.lk
 ```sh
 #include "StDaqLib/TRG/trgStructures2019.h" 
 #include "StEvent/StTriggerData2019.h"
+...
 if(td[3] == 0x46){
 TriggerDataBlk2019* trgdata2019 = (TriggerDataBlk2019*)td; 
 StTriggerData2019* trgd = new StTriggerData2019(trgdata2019,run); 
@@ -53,8 +54,8 @@ StTriggerData2019* trgd = new StTriggerData2019(trgdata2019,run);
 
 `ZDC_Calibration/ZdcCalibration/zdcTree.h`:
 ```sh
-TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject(Form("/gpfs01/star/pwg/lkramarik/ZDC/ZDC_Calibration/run19.ZdcCalibration.lkramarik/histo/run_%d.histo.root", mRunNumber));    
-f = new TFile(Form("/gpfs01/star/pwg/lkramarik/ZDC/ZDC_Calibration/run19.ZdcCalibration.lkramarik/histo/run_%d.histo.root", mRunNumber));
+TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject(Form("/gpfs01/star/pwg/vanekjan/ZDC/ZDC_Calibration/run19.ZdcCalibration.vanekjan/histo/run_%d.histo.root", mRunNumber));    
+f = new TFile(Form("/gpfs01/star/pwg/vanekjan/ZDC/ZDC_Calibration/run19.ZdcCalibration.vanekjan/histo/run_%d.histo.root", mRunNumber));
 ```
 
 And finally, some straighforward changes in these files:
