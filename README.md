@@ -32,9 +32,9 @@ Here is the list of files and lines in them, that need to be modified:
 
 `ZDC_code/config.C`:
 ```sh
-dirOut = "/gpfs01/star/pwg/vanekjan/ZDC/ZDC_Calibration/run19.ZdcCalibration.vanekjan";
-seenRuns = "/gpfs01/star/pwg/vanekjan/ZDC/ZDC_code/seenRuns/seenRuns_run19.vanekjan.txt";
-filename = "/gpfs01/star/pwg/vanekjan/ZDC/ZDC_code/data/run19.ZdcCalibration.vanekjan.list";
+dirOut = "/star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_Calibration/run19.ZdcCalibration.vanekjan";
+seenRuns = "/star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_code/seenRuns/seenRuns_run19.vanekjan.txt";
+filename = "/star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_code/data/run19.ZdcCalibration.vanekjan.list";
 ```
 
 `ZDC_code/StRoot/StZDCPool/StZDCOnlineMonitoring/StReadTrg.cxx`
@@ -54,8 +54,8 @@ StTriggerData2019* trgd = new StTriggerData2019(trgdata2019,run);
 
 `ZDC_Calibration/ZdcCalibration/zdcTree.h`:
 ```sh
-TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject(Form("/gpfs01/star/pwg/vanekjan/ZDC/ZDC_Calibration/run19.ZdcCalibration.vanekjan/histo/run_%d.histo.root", mRunNumber));    
-f = new TFile(Form("/gpfs01/star/pwg/vanekjan/ZDC/ZDC_Calibration/run19.ZdcCalibration.vanekjan/histo/run_%d.histo.root", mRunNumber));
+TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject(Form("/star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_Calibration/run19.ZdcCalibration.vanekjan/histo/run_%d.histo.root", mRunNumber));    
+f = new TFile(Form("/star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_Calibration/run19.ZdcCalibration.vanekjan/histo/run_%d.histo.root", mRunNumber));
 ```
 
 And finally, some straighforward changes in these files:
