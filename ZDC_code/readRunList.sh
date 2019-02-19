@@ -1,7 +1,7 @@
 #!/bin/bash
 
 runList=${1:-"unSeenRuns.list"}
-runDirectory="run19.ZdcCalibration.lkramarik"
+runDirectory="run19.ZdcCalibration.vanekjan"
 runYear="run19"
 tofCut=0
 
@@ -14,7 +14,7 @@ makeUnseenList.sh $runYear
 
 for run in $( cat  $runList ); do
   echo '*************run '$run'*************'
-  ls /gpfs01/star/pwg/lkramarik/ZDC/ZDC_code/data/$runDirectory/$run/* > /gpfs01/star/pwg/lkramarik/ZDC/ZDC_code/data/$runDirectory.list
+  ls /star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_code/data/$runDirectory/$run/* > /star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_code/data/$runDirectory.list
 
   # if [ ! -f read.pid ]; then
   #   rm -f read.out

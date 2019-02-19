@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wwwDir=/afs/rhic.bnl.gov/star/users/lkramarik/WWW/run19.ZdcCalibration
+wwwDir=/afs/rhic.bnl.gov/star/users/vanekjan/WWW/run19.ZdcCalibration
 
 mkdir -p "$wwwDir"
 cp *.html "$wwwDir"

@@ -6,7 +6,7 @@ void html_maker(int RunNumber = 0)
 //*********************************************************// specify RunNumber & info.
 	char trgSetup[50] = {"ZdcCalibration"};
 //	char trgSetup[20] = {"pp500production"};
-	char typeEnergy[10]={"lkramarik"};
+	char typeEnergy[10]={"vanekjan"};
 
 	TString Trgsetup = "production_2019";
 	TString BeamTypeEnergy = "Au+Au";
@@ -19,7 +19,7 @@ void html_maker(int RunNumber = 0)
 	}
 
 	int RunYear=int(RunNumber/1000000)-1;
-	char root_file_path[200]={"/gpfs01/star/pwg/lkramarik/ZDC/ZDC_Calibration"};
+	char root_file_path[200]={"/star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_Calibration"};
 	char work_dir[200];	sprintf(work_dir,"%s/run%d.%s.%s",root_file_path,RunYear,trgSetup,typeEnergy);
 	char data_file[200];sprintf(data_file,"%s/analysis/%d/%d_gain_ratio.dat",work_dir,RunNumber,RunNumber);
 	char html_file[200];sprintf(html_file,"%s/analysis.%d.htm",work_dir,RunNumber);
@@ -62,9 +62,9 @@ void html_maker(int RunNumber = 0)
 	if(!ofile) {cerr<<"ofile.open failed"<<endl;return 0;}
 
 	ofile<<"<!DOCTYPE HTML>"<<endl;
-	ofile<<"<!-- This webpage is craeted by Lukas Kramarik -->"<<endl;
+	ofile<<"<!-- This webpage is craeted by Jan Vanek -->"<<endl;
 	ofile<<"<html>"<<endl;
-	ofile<<"<!-- Head lkramarik --><!-- **************************************** -->"<<endl;
+	ofile<<"<!-- Head vanekjan --><!-- **************************************** -->"<<endl;
 	ofile<<"<head>"<<endl;
 	ofile<<"<title>Run"<<RunNumber<<" ZDC</title>"<<endl;
 	ofile<<"<style type=\"text/css\">"<<endl;
@@ -88,7 +88,7 @@ void html_maker(int RunNumber = 0)
 	ofile<<""<<endl;
 	ofile<<"</style>"<<endl;
 	ofile<<"</head>"<<endl;
-	ofile<<"<!-- Body lkramarik --><!-- **************************************** -->"<<endl;
+	ofile<<"<!-- Body vanekjan --><!-- **************************************** -->"<<endl;
 	ofile<<"<body>"<<endl;
 	ofile<<"<h1><p>Run "<<RunNumber<<" Analysis</p></h1>"<<endl;
 	ofile<<"<h2><p>Trgsetup : "<<Trgsetup<<"</p></h2>"<<endl;
@@ -215,6 +215,6 @@ void html_maker(int RunNumber = 0)
 	ofile<<" <A href=\"./analysis/"<<RunNumber<<"/"<<RunNumber<<"_west_sum_diff.gif\">"<<endl;
 	ofile<<"<img src=\"./analysis/"<<RunNumber<<"/"<<RunNumber<<"_west_sum_diff.gif\" alt=\""<<RunNumber<<"_west_sum_diff.gif\" width=\"480\" height \"360\"/></A>"<<endl;
 	ofile<<"</body>"<<endl;
-	ofile<<"<!-- End lkramarik --><!-- **************************************** -->"<<endl;
+	ofile<<"<!-- End vanekjan --><!-- **************************************** -->"<<endl;
 	ofile<<"</html>"<<endl;
 }
