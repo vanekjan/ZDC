@@ -32,7 +32,7 @@ using namespace std;
 
 #include <StTriggerData.h>
 //#include <StTriggerData2018.h>
-#include <StTriggerData2019.h> //change this at beginning of each run
+#include <StTriggerData2021.h> //change this at beginning of each run
 
 #include <tables/St_zdcsmdPed_Table.h>
 #include <tables/St_zdcsmdGain_Table.h>

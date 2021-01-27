@@ -1,8 +1,8 @@
 #!/bin/bash
 
 runList=${1:-"unSeenRuns.list"}
-runDirectory="run19.ZdcCalibration.vanekjan"
-runYear="run19"
+runDirectory="run21.ZdcCalibration.vanekjan"
+runYear="run21"
 tofCut=0
 
 # untar all the tarred .dat files
@@ -14,7 +14,7 @@ makeUnseenList.sh $runYear
 
 for run in $( cat  $runList ); do
   echo '*************run '$run'*************'
-  ls /star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_code/data/$runDirectory/$run/* > /star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_code/data/$runDirectory.list
+  ls /star/u/vanekjan/pwg/vanekjan/ZDC/ZDC_code_old/ZDC/ZDC_code/data/$runDirectory/$run/* > /star/u/vanekjan/pwg/vanekjan/ZDC/ZDC_code_old/ZDC/ZDC_code/data/$runDirectory.list
 
   # if [ ! -f read.pid ]; then
   #   rm -f read.out
