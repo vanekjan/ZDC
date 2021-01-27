@@ -43,8 +43,8 @@
 
 // THIS NEEDS TO BE CHANGED EVERY RUN
 
- 	dirOut = "/star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_Calibration/run19.ZdcCalibration.vanekjan";
-	seenRuns = "/star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_code/seenRuns/seenRuns_run19.vanekjan.txt";
+ 	dirOut = "/star/u/vanekjan/pwg/vanekjan/ZDC/ZDC_code_old/ZDC/ZDC_Calibration/run21.ZdcCalibration.vanekjan";
+	seenRuns = "/star/u/vanekjan/pwg/vanekjan/ZDC/ZDC_code_old/ZDC/ZDC_code/seenRuns_run21.vanekjan.txt";
 
 //	... and assume it is visible at this URL
 //	publicDir = "http://www.star.bnl.gov/protected/spin/ogrebeny/zdc2009";
@@ -87,7 +87,7 @@
 //		filename = "./run10065061.list";
 
 // THIS NEEDS TO BE CHANGED EVERY RUN
-		filename = "/star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_code/data/run19.ZdcCalibration.vanekjan.list";
+		filename = "/star/u/vanekjan/pwg/vanekjan/ZDC/ZDC_code_old/ZDC/ZDC_code/data/run21.ZdcCalibration.vanekjan.list";
 
 		searchForOtherRunFiles = false;
 	}

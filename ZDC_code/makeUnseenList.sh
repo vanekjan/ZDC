@@ -1,5 +1,5 @@
 #!/bin/bash
 runYear=${1}
-ls /gpfs01/star/pwg/lkramarik/ZDC/ZDC_code/data/${runYear}.ZdcCalibration.lkramarik/ > tmp.list
-sort seenRuns/seenRuns_${runYear}.lkramarik.txt tmp.list | uniq -u > unSeenRuns.list
+ls /star/u/vanekjan/pwg/vanekjan/ZDC/ZDC_code_old/ZDC/ZDC_code/data/${runYear}.ZdcCalibration.vanekjan/ > tmp.list
+sort seenRuns/seenRuns_${runYear}.vanekjan.txt tmp.list | uniq -u > unSeenRuns.list
 rm tmp.list

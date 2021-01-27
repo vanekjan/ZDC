@@ -8,7 +8,7 @@ void html_maker(int RunNumber = 0)
 //	char trgSetup[20] = {"pp500production"};
 	char typeEnergy[10]={"vanekjan"};
 
-	TString Trgsetup = "production_2019";
+	TString Trgsetup = "production_2021";
 	TString BeamTypeEnergy = "Au+Au";
 //*********************************************************
 	if(RunNumber < 1e7 || RunNumber >= 1e8) // has to be an 8-digit number
@@ -19,7 +19,7 @@ void html_maker(int RunNumber = 0)
 	}
 
 	int RunYear=int(RunNumber/1000000)-1;
-	char root_file_path[200]={"/star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_Calibration"};
+	char root_file_path[200]={"/star/u/vanekjan/pwg/vanekjan/ZDC/ZDC_code_old/ZDC/ZDC_Calibration"};
 	char work_dir[200];	sprintf(work_dir,"%s/run%d.%s.%s",root_file_path,RunYear,trgSetup,typeEnergy);
 	char data_file[200];sprintf(data_file,"%s/analysis/%d/%d_gain_ratio.dat",work_dir,RunNumber,RunNumber);
 	char html_file[200];sprintf(html_file,"%s/analysis.%d.htm",work_dir,RunNumber);
