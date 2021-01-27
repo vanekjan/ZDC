@@ -7,7 +7,7 @@ your directory (I will be calling it the base folder in this text).
 
 First, you must download the .dat files which are quite big, therefore I recommend saving them on
 the `gpfs01` disc on RCF (`/gpfs/mnt/gpfs01/star/pwg`). For the data transfer, I use the script
-`transfer.cpp` in `/direct/star+u/msimko/ZDC/data`. It uses Data Carousel so you won't put much
+`transfer.cpp` in `/star/u/vanekjan/pwg/vanekjan/ZDC/ZDC_code_old/ZDC`. It uses Data Carousel so you won't put much
 pressure on the HPSS (this is good practice). You run it by typing:
 ```
 $ root -q transfer.cpp
