@@ -22,39 +22,39 @@ Before running this script, update all files and create appropriate folders. For
 ## Changes needed at the beginning of the new year run
 New files and folders or you can just run `prepareFolders.sh`:
 ```sh
-touch ZDC_code/seenRuns/seenRuns_run19.vanekjan.txt
-mkdir ZDC_code/data/run19.ZdcCalibration.vanekjan
-mkdir ZDC_Calibration/run19.ZdcCalibration.vanekjan
-mkdir /afs/rhic.bnl.gov/star/users/vanekjan/WWW/run19.ZdcCalibration
+touch ZDC_code/seenRuns/seenRuns_run21.vanekjan.txt
+mkdir ZDC_code/data/run21.ZdcCalibration.vanekjan
+mkdir ZDC_Calibration/run21.ZdcCalibration.vanekjan
+mkdir /afs/rhic.bnl.gov/star/users/vanekjan/WWW/run21.ZdcCalibration
 ```
 Here is the list of files and lines in them, that need to be modified:
 
 `ZDC_code/config.C`:
 ```sh
-dirOut = "/star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_Calibration/run19.ZdcCalibration.vanekjan";
-seenRuns = "/star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_code/seenRuns/seenRuns_run19.vanekjan.txt";
-filename = "/star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_code/data/run19.ZdcCalibration.vanekjan.list";
+dirOut = "/star/u/vanekjan/pwg/vanekjan/ZDC/ZDC_code_old/ZDC/ZDC_Calibration/run19.ZdcCalibration.vanekjan";
+seenRuns = "/star/u/vanekjan/pwg/vanekjan/ZDC/ZDC_code_old/ZDC/ZDC_code/seenRuns/seenRuns_run19.vanekjan.txt";
+filename = "/star/u/vanekjan/pwg/vanekjan/ZDC/ZDC_code_old/ZDC/ZDC_code/data/run19.ZdcCalibration.vanekjan.list";
 ```
 
 `ZDC_code/StRoot/StZDCPool/StZDCOnlineMonitoring/StReadTrg.cxx`
 ```sh
-#include <StTriggerData2019.h>
+#include <StTriggerData2021.h>
 ```
 
 `ZDC_code/StRoot/StZDCPool/StZDCOnlineMonitoring/TriggerData.cxx`
 ```sh
-#include "StDaqLib/TRG/trgStructures2019.h" 
-#include "StEvent/StTriggerData2019.h"
+#include "StDaqLib/TRG/trgStructures2021.h" 
+#include "StEvent/StTriggerData2021.h"
 ...
 if(td[3] == 0x46){
-TriggerDataBlk2019* trgdata2019 = (TriggerDataBlk2019*)td; 
-StTriggerData2019* trgd = new StTriggerData2019(trgdata2019,run); 
+TriggerDataBlk2021* trgdata2021 = (TriggerDataBlk2021*)td; 
+StTriggerData2021* trgd = new StTriggerData2021(trgdata2021,run); 
 ```
 
 `ZDC_Calibration/ZdcCalibration/zdcTree.h`:
 ```sh
-TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject(Form("/star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_Calibration/run19.ZdcCalibration.vanekjan/histo/run_%d.histo.root", mRunNumber));    
-f = new TFile(Form("/star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_Calibration/run19.ZdcCalibration.vanekjan/histo/run_%d.histo.root", mRunNumber));
+TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject(Form("/star/u/vanekjan/pwg/vanekjan/ZDC/ZDC_code_old/ZDC/ZDC_Calibration/run19.ZdcCalibration.vanekjan/histo/run_%d.histo.root", mRunNumber));    
+f = new TFile(Form("/star/u/vanekjan/pwg/vanekjan/ZDC/ZDC_code_old/ZDC/ZDC_Calibration/run19.ZdcCalibration.vanekjan/histo/run_%d.histo.root", mRunNumber));
 ```
 
 And finally, some straighforward changes in these files:
