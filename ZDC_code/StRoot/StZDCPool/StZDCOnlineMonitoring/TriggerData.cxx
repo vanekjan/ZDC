@@ -7,8 +7,8 @@
 #include "RTS/src/DAQ_READER/daqReader.h"
 #include "RTS/src/DAQ_READER/daq_dta.h"
 #include "RTS/src/DAQ_READER/daq_det.h"
-#include "StDaqLib/TRG/trgStructures2021.h" // msimko
-#include "StEvent/StTriggerData2021.h" // msimko
+#include "StDaqLib/TRG/trgStructures2019.h" // msimko
+#include "StEvent/StTriggerData2019.h" // msimko
 #endif
 
 #include "TriggerData.h"
@@ -56,16 +56,18 @@ StTriggerData* TriggerData::Instance(char *td, int run, int event){
    // if(td[3] == 0x43){//modified by msimko for run2016	!!
    // if(td[3] == 0x44){//modified by msimko for run2017	!!
 //      if(td[3] == 0x45){//modified by msimko for run2017	!!
-//      if(td[3] == 0x46){//modified by msimko for run2019	!!
-      if(td[3] == 0x48) //modified by vanekjan for run2021 
+      if(td[3] == 0x46)//modified by msimko for run2019	!!
+//      if(td[3] == 0x48) //modified by vanekjan for run2021 
       {
-	TriggerDataBlk2021* trgdata2021 = (TriggerDataBlk2021*)td; // msimko
-	StTriggerData2021* trgd = new StTriggerData2021(trgdata2021,run); // msimko
+	TriggerDataBlk2019* trgdata2019 = (TriggerDataBlk2019*)td; // msimko
+	StTriggerData2019* trgd = new StTriggerData2019(trgdata2019,run); // msimko
 //        trgd->dump();//yhzhu added for run2012!
 	trgdata = (StTriggerData*)trgd;
 	run_old = run;
 	event_old = event;
-      }else{	
+      }
+      else
+      {	
 	LOG_ERROR << "TRG RAW: version missmatch, skipping trigger data" << endm;
       }
   }
