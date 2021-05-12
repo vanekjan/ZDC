@@ -29,7 +29,7 @@ void zdcTree::Loop()
   //*******************************************************
   int RunYear=int(RunNumber/1000000)-1;
   //*******************************************************
-  char root_file_path[200]={"/star/u/vanekjan/500GBStorage/vanekjan/ZDC/ZDC_code_new/ZDC/ZDC_Calibration"};
+  char root_file_path[200]={"/star/u/vanekjan/pwg/vanekjan/ZDC/ZDC_code_old/ZDC/ZDC_Calibration"};
 
   char work_dir[200];
   sprintf(work_dir,"%s/run%d.%s.%s",root_file_path,RunYear,trgSetup,typeEnergy);
@@ -165,25 +165,31 @@ void zdcTree::Loop()
     }
 
     // ADC sum cuts
-    bool westCut = zdc_ADC_WestSum < 400;
-    bool eastCut = zdc_ADC_EastSum < 300;
+    bool westCut = zdc_ADC_WestSum < 200; //old 400
+    bool eastCut = zdc_ADC_EastSum < 200; //old 300
     //
     // TAC cuts
     bool eastTACcut = zdc_TDC_EastSum > 200 && zdc_TDC_EastSum < 2000;
     bool westTACcut = zdc_TDC_WestSum > 200 && zdc_TDC_WestSum < 2000;
     // bool westCut = true, eastCut = true; // not cutting on anything
-    const float eastSnpMean = 45.9270;
-    const float eastSnpSigma = 11.6;
-    const float westSnpMean = 45.3;
-    const float westSnpSigma = 16.3;
+//    const float eastSnpMean = 45.9270;
+//    const float eastSnpSigma = 11.6;
+//    const float westSnpMean = 45.3;
+//    const float westSnpSigma = 16.3;
+//    const float NSigma = 2.;
+
+//for O+O Run21 test with physics triggers
+    const float eastSnpMean = 135.4;
+    const float eastSnpSigma = 32.78;
+    const float westSnpMean = 125.4;
+    const float westSnpSigma = 28.99;
     const float NSigma = 2.;
 
     if (!(eastTACcut && westTACcut))
       continue;
 
     // TOF multiplicity cut
-    if(tof_multiplicity >= mTofCut)
-      continue;
+    if(tof_multiplicity >= mTofCut) continue;
 
     if(westCut) // look at the East
     {

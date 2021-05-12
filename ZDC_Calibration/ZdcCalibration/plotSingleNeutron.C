@@ -10,8 +10,8 @@
 
 void plotSingleNeutron()
 {
-  std::string runNumber = "19071065";
-  TFile *inf1 = new TFile( ("analysis/" + runNumber + "/" + runNumber + "_my_zdc_result_file.root").data() );
+  std::string runNumber = "22131038";
+  TFile *inf1 = new TFile( ("../run21.ZdcCalibration.vanekjan/analysis/" + runNumber + "/" + runNumber + "_my_zdc_result_file.root").data() );
 
   TCanvas *C1 = new TCanvas("C1", "east", 600, 400);
   TCanvas *C2 = new TCanvas("C2", "west", 600, 400);
@@ -23,7 +23,7 @@ void plotSingleNeutron()
   TF1 *westF = new TF1("westF", "[0] + ([1])*(TMath::Exp(-[2]*x)) + ([3])*(TMath::Gaus(x,[4],[5],1)) + [6]*TMath::Gaus(x,2.*[4],[7],1)",50,400);
 
   //eastF->SetParameters( 7.11954e+01, 1.91250e+03 , 2.24099e-02, 14,  9.44266e+01 , 9.80875e+00 );
-  eastF->SetParameters(  -3500, 3500, 0.00044, 15000, 80, 9.80875e+00, 5000, 10 );
+  eastF->SetParameters(  -3500, 3500, 0.00044, 15000, 110, 9.80875e+00, 5000, 10 );
   eastF->SetParName(0,"Constant");
   eastF->SetParName(1,"BgConstant");
   eastF->SetParName(2,"BgSlope");
@@ -44,7 +44,7 @@ void plotSingleNeutron()
   westF->SetParName(6,"Yield Double");
   westF->SetParName(7,"sigma Double");
 
-  hEast->Fit("eastF", "","", 50, 330);
+  hEast->Fit("eastF", "","", 60, 330);
   hWest->Fit("westF", "","", 60, 330);
   // hEast->SetAxisRange(50,180,"X");
   // hWest->SetAxisRange(50,180,"X");
@@ -65,12 +65,12 @@ void plotSingleNeutron()
   gStyle->SetOptFit(1111);
   hWest->Draw();
 
-  std::string eastFileName = "analysis/" + runNumber + "/snp" + runNumber + "east";
+  std::string eastFileName = "../run21.ZdcCalibration.vanekjan/analysis/" + runNumber + "/snp" + runNumber + "east";
   C1->SaveAs( (eastFileName + ".pdf" ).data() );
   C1->SaveAs( (eastFileName + ".png" ).data() );
   C1->SaveAs( (eastFileName + ".root").data() );
 
-  std::string westFileName = "analysis/" + runNumber + "/snp" + runNumber + "west";
+  std::string westFileName = "../run21.ZdcCalibration.vanekjan/analysis/" + runNumber + "/snp" + runNumber + "west";
   C2->SaveAs( (westFileName + ".pdf" ).data() );
   C2->SaveAs( (westFileName + ".png" ).data() );
   C2->SaveAs( (westFileName + ".root").data() );
