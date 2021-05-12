@@ -3,7 +3,7 @@
 runList=${1:-"unSeenRuns.list"}
 runDirectory="run21.ZdcCalibration.vanekjan"
 runYear="run21"
-tofCut=0
+tofCut=10
 
 # untar all the tarred .dat files
 pushd data/ >> /dev/null
