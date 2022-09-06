@@ -169,8 +169,12 @@ void zdcTree::Loop()
     bool eastCut = zdc_ADC_EastSum < 200; //old 300
     //
     // TAC cuts
-    bool eastTACcut = zdc_TDC_EastSum > 200 && zdc_TDC_EastSum < 2000;
-    bool westTACcut = zdc_TDC_WestSum > 200 && zdc_TDC_WestSum < 2000;
+//    bool eastTACcut = zdc_TDC_EastSum > 200 && zdc_TDC_EastSum < 2000;
+//    bool westTACcut = zdc_TDC_WestSum > 200 && zdc_TDC_WestSum < 2000;
+
+//test for O+O Run21
+    bool eastTACcut = zdc_TDC_EastSum > 600 && zdc_TDC_EastSum < 1200;
+    bool westTACcut = zdc_TDC_WestSum > 600 && zdc_TDC_WestSum < 1200;
     // bool westCut = true, eastCut = true; // not cutting on anything
 //    const float eastSnpMean = 45.9270;
 //    const float eastSnpSigma = 11.6;
@@ -178,13 +182,30 @@ void zdcTree::Loop()
 //    const float westSnpSigma = 16.3;
 //    const float NSigma = 2.;
 
-//for O+O Run21 test with physics triggers
-    const float eastSnpMean = 135.4;
-    const float eastSnpSigma = 32.78;
-    const float westSnpMean = 125.4;
-    const float westSnpSigma = 28.99;
+/*
+//for O+O Run21 zdc single trigger, default HV
+    const float eastSnpMean = 27.49;
+    const float eastSnpSigma = 26.01;
+    const float westSnpMean = 23.67;
+    const float westSnpSigma = 32.56;
     const float NSigma = 2.;
 
+*/
+//for O+O Run21 zdc_calib trigger, default HV
+    const float eastSnpMean = 104.5;
+    const float eastSnpSigma = 29.22;
+    const float westSnpMean = 108.7;
+    const float westSnpSigma = 38.03;
+    const float NSigma = 2.;
+
+/*
+//for O+O Run21 zdc_calib trigger, increased HV
+    const float eastSnpMean = 247.9;
+    const float eastSnpSigma = 57.08;
+    const float westSnpMean = 203.;
+    const float westSnpSigma = 60.58;
+    const float NSigma = 2.;
+*/
     if (!(eastTACcut && westTACcut))
       continue;
 
@@ -199,8 +220,8 @@ void zdcTree::Loop()
       east_2->Fill(zdc_ADC_EastTow2);
       east_3->Fill(zdc_ADC_EastTow3);
 
-      if (zdc_ADC_EastSum > eastSnpMean - NSigma*eastSnpSigma && 
-	  zdc_ADC_EastSum < eastSnpMean + NSigma*eastSnpSigma)
+      if ( zdc_ADC_EastSum > (eastSnpMean - NSigma*eastSnpSigma) && 
+	  zdc_ADC_EastSum < (eastSnpMean + NSigma*eastSnpSigma) )
       {
 	east_count_att += zdc_ADC_EastSum_Attenuated;
 	east_count_sum += zdc_ADC_EastSum;

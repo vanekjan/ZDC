@@ -1,8 +1,8 @@
 #!/bin/bash
 
 runList=${1:-"unSeenRuns.list"}
-runDirectory="run21.ZdcCalibration.vanekjan"
-runYear="run21"
+runDirectory="run22.ZdcCalibration.vanekjan"
+runYear="run22"
 tofCut=10
 
 # untar all the tarred .dat files

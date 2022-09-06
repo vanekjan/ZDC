@@ -10,7 +10,10 @@
 
 void plotSingleNeutron()
 {
-  std::string runNumber = "22131038";
+  //std::string runNumber = "22131016"; //production test run
+  //std::string runNumber = "22131038"; //ZDC coincidence calibration run
+  //std::string runNumber = "22133001"; //ZDC East or West trigger run
+  std::string runNumber = "22139024"; //ZDC coincidence calibration run, new HV
   TFile *inf1 = new TFile( ("../run21.ZdcCalibration.vanekjan/analysis/" + runNumber + "/" + runNumber + "_my_zdc_result_file.root").data() );
 
   TCanvas *C1 = new TCanvas("C1", "east", 600, 400);
@@ -19,11 +22,13 @@ void plotSingleNeutron()
   TH1D *hEast = (TH1D*)inf1->Get("ZDC_ADC_east_sum");
   TH1D *hWest = (TH1D*)inf1->Get("ZDC_ADC_west_sum");
 
-  TF1 *eastF = new TF1("eastF", "[0] + ([1])*(TMath::Exp(-[2]*x)) + ([3])*(TMath::Gaus(x,[4],[5],1)) + [6]*TMath::Gaus(x,2.*[4],[7],1)",50,400);
-  TF1 *westF = new TF1("westF", "[0] + ([1])*(TMath::Exp(-[2]*x)) + ([3])*(TMath::Gaus(x,[4],[5],1)) + [6]*TMath::Gaus(x,2.*[4],[7],1)",50,400);
+  TF1 *eastF = new TF1("eastF", "[0] + ([1])*(TMath::Exp(-[2]*x)) + ([3])*(TMath::Gaus(x,[4],[5],1)) + [6]*TMath::Gaus(x,2.*[4],[7],1)",100,400);//old 50 to 400
+  TF1 *westF = new TF1("westF", "[0] + ([1])*(TMath::Exp(-[2]*x)) + ([3])*(TMath::Gaus(x,[4],[5],1)) + [6]*TMath::Gaus(x,2.*[4],[7],1)",100,400);//old 50 to 400
 
   //eastF->SetParameters( 7.11954e+01, 1.91250e+03 , 2.24099e-02, 14,  9.44266e+01 , 9.80875e+00 );
-  eastF->SetParameters(  -3500, 3500, 0.00044, 15000, 110, 9.80875e+00, 5000, 10 );
+  //eastF->SetParameters(  -3500, 3500, 0.00044, 15000, 50, 9.80875e+00, 5000, 10 ); //for O+O Run21 zdc single trigger, default HV
+  eastF->SetParameters(  -3500, 3500, 0.00044, 15000, 110, 9.80875e+00, 5000, 10 ); //O+O Run21 ZDC_calib, default HV
+  //eastF->SetParameters(  -3500, 3500, 0.00044, 15000, 250, 9.80875e+00, 5000, 10 ); //O+O Run21 ZDC_calib, increased HV
   eastF->SetParName(0,"Constant");
   eastF->SetParName(1,"BgConstant");
   eastF->SetParName(2,"BgSlope");
@@ -33,7 +38,9 @@ void plotSingleNeutron()
   eastF->SetParName(6,"Yield Double");
   eastF->SetParName(7,"sigma Double");
 
-  westF->SetParameters( -3300, 3600, 0.00001, 9000, 90 , 9.80875e+00 ,2200, 10);
+  //westF->SetParameters( -3300, 3600, 0.00001, 9000, 50 , 9.80875e+00 ,2200, 10);  //for O+O Run21 zdc single trigger, default HV
+  westF->SetParameters( -3300, 3600, 0.00001, 9000, 100 , 9.80875e+00 ,2200, 10); //O+O Run21 ZDC_calib, default HV
+  //westF->SetParameters( -3300, 3600, 0.00001, 9000, 250 , 9.80875e+00 ,2200, 10);//O+O Run21 ZDC_calib, increased HV
   //westF->SetParameters( 7.11954e+01, 1.91250e+03 , 2.24099e-02, 14,  110 , 9.80875e+00 );
   westF->SetParName(0,"Constant");
   westF->SetParName(1,"BgConstant");
@@ -44,10 +51,20 @@ void plotSingleNeutron()
   westF->SetParName(6,"Yield Double");
   westF->SetParName(7,"sigma Double");
 
-  hEast->Fit("eastF", "","", 60, 330);
-  hWest->Fit("westF", "","", 60, 330);
-  // hEast->SetAxisRange(50,180,"X");
-  // hWest->SetAxisRange(50,180,"X");
+  //for O+O Run21 zdc single trigger, default HV
+  //hEast->Fit("eastF", "","", 20, 180);
+  //hWest->Fit("westF", "","", 20, 180);
+
+  //O+O Run21 ZDC_calib, default HV
+  hEast->Fit("eastF", "","", 50, 200);
+  hWest->Fit("westF", "","", 50, 200);
+
+  //O+O Run21 ZDC_calib, increased HV
+  //hEast->Fit("eastF", "","", 120, 400);
+  //hWest->Fit("westF", "","", 120, 400);
+
+  //hEast->SetAxisRange(50,180,"X");
+  //hWest->SetAxisRange(50,180,"X");
 
   hEast->GetXaxis()->SetTitle("ADC sum east [-]");
   hWest->GetXaxis()->SetTitle("ADC sum west [-]");
